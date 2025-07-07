@@ -1,0 +1,71 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Bourbon Grotesque';
+  src: url('/fonts/BourbonGrotesque-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  --color-red: #ce2336;
+  --color-navyblue: #192636;
+  --color-offwhite: #d9d9d9;
+  --color-brass: #b8954f;
+  --color-charcoal: #333333;
+  --color-softgray: #8b8680;
+  --color-vintage: #fdf6e3;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Default styling for scroll bars */
+*::-webkit-scrollbar {
+  /* width: 15px; */
+  @apply w-2 h-2;
+}
+*::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-700 rounded;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* .nav-item {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+} */
+
+h1 {
+  font-family: 'Bourbon Grotesque', sans-serif;
+}
+
+h2,
+h3,
+h4 {
+  .montserrat-<uniquifier > {
+    font-family: 'Montserrat', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  }
+}
+
+body {
+  font-family: 'Merriweather', serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings: 'wdth' 100;
+  color: var(--color-charcoal);
+}
