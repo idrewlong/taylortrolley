@@ -1,20 +1,25 @@
 <template>
-  <div class="hidden lg:flex lg:items-center lg:w-full max-w-7xl mx-auto px-4">
+  <div
+    class="hidden lg:flex lg:items-center lg:w-full max-w-7xl mx-auto px-4 relative h-16"
+  >
     <!-- Logo on the left -->
-    <div class="flex-shrink-0">
+    <div
+      class="absolute top-full left-6 -translate-y-1/2 z-20 bg-white rounded-full p-1 shadow-lg"
+    >
       <NavigationLogo
-        container-class="flex items-center justify-center group"
+        image-class-override="h-32 w-auto"
+        container-class="flex items-center justify-center"
       />
     </div>
 
     <!-- Navigation links -->
     <div
-      class="flex items-center justify-end flex-grow gap-8 uppercase ml-auto"
+      class="absolute left-1/2 -translate-x-1/2 flex items-center justify-center uppercase"
     >
-      <template v-for="link in navItems" :key="link.to">
+      <template v-for="(link, index) in navItems" :key="link.to">
         <div
           v-if="link.children && link.children.length > 0"
-          class="relative group"
+          class="relative group px-3"
           @mouseenter="handleMouseEnter(link.label)"
           @mouseleave="handleMouseLeave"
         >
@@ -22,12 +27,12 @@
           <div class="flex items-center gap-1 nav-item">
             <NuxtLink
               :to="link.to"
-              class="text-white transition-all duration-300 py-3 px-2 text-sm tracking-wider font-light relative"
+              class="text-white transition-all duration-300 py-2 text-base lg:text-base xl:text-lg tracking-wider relative"
               :class="{ 'font-medium': $route.path.startsWith(link.to) }"
             >
               {{ link.label }}
               <span
-                class="absolute bottom-1 left-0 w-0 h-0.5 bg-luscored transition-all duration-300 group-hover:w-full"
+                class="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-red transition-all duration-300 group-hover:w-4/5"
               ></span>
             </NuxtLink>
             <button
@@ -75,26 +80,32 @@
         <NuxtLink
           v-else
           :to="link.to"
-          class="relative text-white transition-all duration-300 group py-3 px-2 text-base tracking-wider font-bold nav-item"
+          class="relative text-white transition-all duration-300 group py-2 px-3 text-base lg:text-base xl:text-lg tracking-wider nav-item"
           :class="{ 'font-medium': $route.path === link.to }"
         >
           {{ link.label }}
           <span
-            class="absolute bottom-1 left-0 w-0 h-0.5 bg-luscored transition-all duration-300 group-hover:w-full"
-            :class="{ 'w-full bg-luscored': $route.path === link.to }"
+            class="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-red transition-all duration-300 group-hover:w-4/5"
+            :class="{ 'w-4/5 bg-red': $route.path === link.to }"
           />
         </NuxtLink>
+        <span
+          v-if="index < navItems.length - 1"
+          class="text-gray-500"
+          aria-hidden="true"
+          >|</span
+        >
       </template>
     </div>
 
     <!-- CTA Button -->
-    <div class="ml-8">
+    <div class="ml-auto">
       <NuxtLink
         v-if="ctaItem"
         :to="ctaItem.to"
         target="_blank"
         rel="noopener noreferrer"
-        class="bg-red text-white hover:bg-red/80 transition-colors duration-300 font-semibold py-3 px-6 rounded-md shadow-lg transform hover:scale-105 nav-item uppercase"
+        class="bg-red text-white hover:bg-red/80 transition-colors duration-300 font-semibold py-3 lg:px-4 xl:px-6 rounded-md shadow-lg transform nav-item uppercase flex items-center gap-2 lg:text-base xl:text-base"
       >
         {{ ctaItem.label }}
         <!-- <Icon

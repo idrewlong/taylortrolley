@@ -14,7 +14,7 @@ const primaryNav: NavLink[] = [
   { label: 'Gallery', to: '/gallery' },
   { label: 'Contact', to: '/contact' },
   {
-    label: 'Book Your Ride',
+    label: 'Tickets',
     to: 'https://www.eventbrite.com/d/ms--taylor/taylor-trolley/', // Actual Eventbrite link
     isButton: true,
   },

@@ -5,8 +5,8 @@
     aria-label="Go to homepage"
     @click="$emit('click')"
   >
-    <img
-      src="/logo/taylor_logo.svg"
+    <NuxtImg
+      src="/logo/trolleylogo.png"
       alt="Taylor Trolley Logo"
       :class="imageClass"
     />
@@ -26,9 +26,17 @@ const props = defineProps({
     type: String,
     default: 'flex items-center',
   },
+  imageClassOverride: {
+    type: String,
+    default: '',
+  },
 });
 
 const imageClass = computed(() => {
+  if (props.imageClassOverride) {
+    return props.imageClassOverride;
+  }
+
   const sizeClasses = {
     small: 'h-10 w-auto',
     medium: 'h-14 w-auto',

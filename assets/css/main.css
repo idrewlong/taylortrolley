@@ -41,10 +41,9 @@ html {
   scrollbar-width: none; /* Firefox */
 }
 
-/* .nav-item {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-} */
+.nav-item {
+  font-family: 'Bourbon Grotesque', sans-serif;
+}
 
 h1 {
   font-family: 'Bourbon Grotesque', sans-serif;

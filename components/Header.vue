@@ -1,5 +1,5 @@
 <template>
-  <header class="header-fixed bg-black border-b border-slate-200 shadow-sm">
+  <header class="header-fixed bg-slate-800 border-b border-slate-200 shadow-sm">
     <nav
       class="p-4 px-6 mx-auto lg:flex lg:items-center relative"
       aria-label="Main navigation"
