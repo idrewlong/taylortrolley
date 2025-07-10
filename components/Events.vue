@@ -7,19 +7,21 @@
       Illustration
     </div>
 
-    <p
-      class="text-2xl md:text-3xl font-serif text-gray-800 max-w-3xl mx-auto mb-8"
-    >
-      From the historic Oxford Square to the charming backroads, Taylor Trolley
-      offers a unique experience to the heart of Taylor, Mississippi. From
-      shopping to dining, come see what makes Taylor special.
+    <h2 class="text-4xl md:text-5xl font-serif text-gray-800 mb-4">
+      Your Private Charter Awaits
+    </h2>
+    <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-8">
+      From wedding charters to private events and corporate events, Taylor
+      Trolley adds a touch of historic charm to any occasion. <br />
+      Let us make your next event in Taylor, Mississippi, or Oxford,
+      Mississippi, an unforgettable experience.
     </p>
 
     <NuxtLink
-      to="/about"
+      to="/events"
       class="inline-block tracking-widest text-gray-700 font-semibold py-2 border-t border-b border-gray-400 hover:text-gray-900 hover:border-gray-600 transition-colors duration-300"
     >
-      Learn More About Us
+      Book Your Event
     </NuxtLink>
   </div>
 </template>

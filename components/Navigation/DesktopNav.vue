@@ -91,7 +91,7 @@
         </NuxtLink>
         <span
           v-if="index < navItems.length - 1"
-          class="text-gray-500"
+          class="text-brass"
           aria-hidden="true"
           >|</span
         >

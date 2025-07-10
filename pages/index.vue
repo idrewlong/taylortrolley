@@ -1,12 +1,11 @@
+<script setup lang="ts"></script>
+
 <template>
-  <div>
+  <main>
     <Hero />
     <CardCarousel />
     <About />
-    <!-- You can add more sections here below the hero -->
-  </div>
+    <ImageCollage />
+    <Events />
+  </main>
 </template>
-
-<script setup>
-// You can add any script setup logic here if needed
-</script>

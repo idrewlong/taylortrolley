@@ -10,8 +10,9 @@ interface NavLink {
 const primaryNav: NavLink[] = [
   // { label: 'Schedule', to: '/schedule' },
   { label: 'About', to: '/about' },
-  { label: 'FAQ', to: '/faq' },
-  { label: 'Gallery', to: '/gallery' },
+  { label: 'Events', to: '/events' },
+  { label: 'Taylor', to: '/taylor-ms' },
+  { label: 'News', to: '/news' },
   { label: 'Contact', to: '/contact' },
   {
     label: 'Tickets',
@@ -20,20 +21,28 @@ const primaryNav: NavLink[] = [
   },
 ];
 
-const footerLinksList: NavLink[] = [
-  { label: 'FAQ', to: '/faq' },
-  { label: 'Group Events', to: '/group-events' },
-  { label: 'Gallery', to: '/gallery' },
-  { label: 'Taylor, MS', to: '/taylor-ms' },
+const footerQuickLinksList: NavLink[] = [
+  { label: 'About', to: '/about' },
+  { label: 'Events', to: '/events' },
+  { label: 'Taylor', to: '/taylor-ms' },
+  { label: 'News', to: '/news' },
+  // { label: 'Gallery', to: '/gallery' },
   { label: 'Contact', to: '/contact' },
+];
+
+const footerMoreInfoList: NavLink[] = [
+  { label: 'FAQ', to: '/faq' },
+  { label: 'Privacy Policy', to: '/privacy-policy' },
+  { label: 'Terms of Service', to: '/terms-of-service' },
 ];
 
 export const useNavigation = () => {
   const navigationLinks = computed(() => primaryNav);
-  const footerLinks = computed(() => footerLinksList);
-
+  const footerQuickLinks = computed(() => footerQuickLinksList);
+  const footerMoreInfo = computed(() => footerMoreInfoList);
   return {
     navigationLinks,
-    footerLinks,
+    footerQuickLinks,
+    footerMoreInfo,
   };
 };
