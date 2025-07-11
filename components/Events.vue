@@ -1,11 +1,10 @@
 <template>
   <div class="container mx-auto px-4 py-16 sm:py-24 text-center">
-    <!-- Placeholder for illustration -->
-    <div
-      class="w-48 h-32 mx-auto mb-8 border-2 border-dashed border-gray-300 flex items-center justify-center text-gray-500"
-    >
-      Illustration
-    </div>
+    <img
+      src="/images/Vector.svg"
+      alt="An illustration of a wedding ring."
+      class="mx-auto mb-8"
+    />
 
     <h2 class="text-4xl md:text-5xl font-serif text-gray-800 mb-4">
       Your Private Charter Awaits

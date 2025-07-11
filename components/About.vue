@@ -1,11 +1,10 @@
 <template>
   <div class="container mx-auto px-4 py-16 sm:py-24 text-center">
-    <!-- Placeholder for illustration -->
-    <div
-      class="w-48 h-32 mx-auto mb-8 border-2 border-dashed border-gray-300 flex items-center justify-center text-gray-500"
-    >
-      Illustration
-    </div>
+    <img
+      src="/images/Union.svg"
+      alt="An illustration of the storefronts in Taylor, Mississippi with a trolley car."
+      class="mx-auto mb-8"
+    />
 
     <p
       class="text-2xl md:text-3xl font-serif text-gray-800 max-w-3xl mx-auto mb-8"

@@ -22,6 +22,14 @@ html {
   scrollbar-width: none; /* Firefox */
 }
 
+html::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.snap-y {
+  scroll-snap-type: y proximity;
+}
+
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }

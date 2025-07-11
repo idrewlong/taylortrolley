@@ -7,5 +7,7 @@
     <About />
     <ImageCollage />
     <Events />
+    <Taylor />
+    <News />
   </main>
 </template>
