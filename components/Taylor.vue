@@ -15,6 +15,12 @@ const businesses = ref([
     description: 'A unique community with beautiful architecture and art.',
   },
   {
+    name: "Lusco's",
+    image: '/images/shrimp.webp',
+    description:
+      "An iconic Mississippi Delta institution, Lusco's brings its legendary seafood and steaks to the heart of Taylor.",
+  },
+  {
     name: 'Taylor Grocery',
     image: '/images/taylorgrocery.webp',
     description: 'Home of the finest catfish in Mississippi.',
@@ -59,9 +65,9 @@ onMounted(() => {
         trigger: mainContainer.value,
         pin: true,
         start: 'center center',
-        scrub: 1,
+        scrub: 2,
         snap: 1 / (sections.length - 1),
-        end: '+=3500',
+        end: '+=5000',
         // markers: true,
       },
     });

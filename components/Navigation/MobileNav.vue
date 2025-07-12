@@ -1,14 +1,18 @@
 <template>
   <div>
     <!-- Mobile Menu Toggle Button -->
-    <div class="flex items-center justify-between lg:hidden">
-      <NavigationLogo
-        size="small"
-        container-class="flex items-center"
-        @click="closeNavbar"
-      />
+    <div class="lg:hidden relative h-16">
+      <div
+        class="absolute top-[3.5rem] left-1 -translate-y-1/2 z-20 bg-white rounded-full p-1 shadow-lg"
+      >
+        <NavigationLogo
+          image-class-override="h-24 w-auto"
+          container-class="flex items-center"
+          @click="closeNavbar"
+        />
+      </div>
 
-      <div class="flex items-center gap-3">
+      <div class="flex items-center justify-end h-full pr-4">
         <button
           type="button"
           class="text-white hover:text-slate-300 focus:outline-none rounded transition-colors duration-300"
@@ -40,7 +44,7 @@
     >
       <div
         v-show="showMenu"
-        class="fixed inset-y-0 left-0 w-3/4 max-w-xs bg-black/95 backdrop-blur-sm p-6 z-[101] rounded-r-2xl shadow-2xl flex flex-col space-y-6 lg:hidden focus:outline-none"
+        class="fixed inset-y-0 left-0 w-3/4 max-w-xs bg-navyblue/95 backdrop-blur-sm p-6 z-[101] rounded-r-2xl shadow-2xl flex flex-col space-y-6 lg:hidden focus:outline-none"
         role="dialog"
         aria-modal="true"
         id="main-navigation"
@@ -62,7 +66,7 @@
         </div>
 
         <nav class="flex flex-col space-y-4" aria-label="Mobile navigation">
-          <template v-for="link in navigationLinks" :key="link.to">
+          <template v-for="link in navItems" :key="link.to">
             <template v-if="link.children && link.children.length > 0">
               <button
                 class="flex items-center justify-between text-white/80 hover:text-white transition-colors duration-300 w-full py-2 text-lg nav-item"
@@ -138,7 +142,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 
 const props = defineProps({
   navigationLinks: {
@@ -146,6 +150,14 @@ const props = defineProps({
     required: true,
   },
 });
+
+const navItems = computed(() =>
+  props.navigationLinks.filter((link) => !link.isButton)
+);
+
+const ctaItem = computed(() =>
+  props.navigationLinks.find((link) => link.isButton)
+);
 
 const showMenu = ref(false);
 const openDropdown = ref(null);
