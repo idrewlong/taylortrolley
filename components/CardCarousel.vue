@@ -21,12 +21,12 @@
             ></div>
             <div class="relative text-center p-4">
               <h3
-                class="text-3xl font-serif uppercase tracking-wider transition-transform duration-300 group-hover:-translate-y-4"
+                class="text-3xl font-serif uppercase tracking-wider transition-transform duration-300 lg:group-hover:-translate-y-4"
               >
                 {{ card.title }}
               </h3>
               <div
-                class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                class="mt-4 transition-opacity duration-300 lg:opacity-0 lg:group-hover:opacity-100"
               >
                 <NuxtLink
                   :to="card.link"
